@@ -8,10 +8,12 @@ const server = http.createServer(function(req,res){
   if (error){
    res.writeHead(404)
    res.write('Error:File Not Found')
+  } else {
+   res.write(data)
   }
+  res.end()
  })
- res.write('Hello Node')
- res.end()
+
 })
 
 server.listen(port, function(error) {
